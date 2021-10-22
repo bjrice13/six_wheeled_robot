@@ -1,0 +1,39 @@
+<launch>
+  <!-- <rosparam file="$(find six_wheeled_robot)/config/rover_control.yaml" command="load"/> -->
+  <param command="$(find xacro)/xacro $(find six_wheeled_robot)/urdf/six_wheeled_robot.xacro" name="six_wheeled_robot"/>
+  <arg name="model" default="$(env TURTLEBOT3_MODEL)" doc="model type [burger, waffle, waffle_pi]"/>
+
+  <arg name="gui" default="true"/>
+  <arg name="mode" default="day" doc="mode of the track to load, valid options are 'day' or 'night'"/>
+
+  <arg name="x" default="0"/>
+  <arg name="y" default="0"/>
+  <arg name="z" default="1"/>
+  <arg name="roll" default="0"/>
+  <arg name="pitch" default="0"/>
+  <arg name="yaw" default="0"/>
+
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(find six_wheeled_robot)/worlds/MDRS_Small.world"/>
+    <arg name="paused" default="false"/>
+    <arg name="use_sim_time" default="true"/>
+    <arg name="gui" default="$(arg gui)"/>
+    <arg name="headless" default="false"/>
+    <arg name="debug" default="false"/>
+    <arg name="verbose" default="true"/>
+  </include>
+
+  <param name="robot_description" command="$(find xacro)/xacro $(find turtlebot3_description)/urdf/turtlebot3_$(arg model).urdf.xacro" />
+
+    <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-param robot_description -urdf -model turtlebot3
+  -x $(arg x) -y $(arg y) -z $(arg z)
+  -R $(arg roll) -P $(arg pitch) -Y $(arg yaw)"/>
+
+
+  <!-- <node args="-param sixwheeledrobot -urdf -model sdrc_rover" name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" >
+    <param name="publish_frequency" type="double" value="20" />
+</node>
+<node args="-param sixwheeledrobot -urdf -model sdrc_rover" name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
+  <param name="publish_frequency" type="double" value="20" />
+</node> -->
+</launch>

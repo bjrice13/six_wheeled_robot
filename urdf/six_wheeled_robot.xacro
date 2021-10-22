@@ -1,0 +1,224 @@
+<?xml version="1.0" ?>
+<robot name="six_wheeled_robot" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find six_wheeled_robot)/urdf/materials.xacro" />
+<xacro:include filename="$(find six_wheeled_robot)/urdf/six_wheeled_robot.trans" />
+<xacro:include filename="$(find six_wheeled_robot)/urdf/six_wheeled_robot.gazebo" />
+<link name="base_link">
+  <inertial>
+    <origin rpy="0 0 0" xyz="2.841280940385884e-16 -7.09531036496353e-05 0.1110419484576658"/>
+    <mass value="2.642747554846689"/>
+    <inertia ixx="0.042456" ixy="0.0" ixz="0.0" iyy="0.101894" iyz="-7e-06" izz="0.140146"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <geometry>
+      <mesh filename="package://six_wheeled_robot/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <geometry>
+      <mesh filename="package://six_wheeled_robot/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="wheel1_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="3.008704396734174e-14 -0.015874999999999778 -5.551115123125783e-17"/>
+    <mass value="0.19439237862872402"/>
+    <inertia ixx="0.000362" ixy="0.0" ixz="-0.0" iyy="0.00066" iyz="0.0" izz="0.000362"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.2921 -0.2286 -0.08255"/>
+    <geometry>
+      <mesh filename="package://six_wheeled_robot/meshes/wheel1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.2921 -0.2286 -0.08255"/>
+    <geometry>
+      <mesh filename="package://six_wheeled_robot/meshes/wheel1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="wheel2_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="3.0198066269804264e-14 -0.015874999999999834 1.6653345369377348e-16"/>
+    <mass value="0.19439237862872388"/>
+    <inertia ixx="0.000362" ixy="0.0" ixz="0.0" iyy="0.00066" iyz="-0.0" izz="0.000362"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.0 -0.2286 -0.08255"/>
+    <geometry>
+      <mesh filename="package://six_wheeled_robot/meshes/wheel2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.0 -0.2286 -0.08255"/>
+    <geometry>
+      <mesh filename="package://six_wheeled_robot/meshes/wheel2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="wheel3_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="3.0142555118573e-14 -0.015875 6.938893903907228e-17"/>
+    <mass value="0.19439237862872388"/>
+    <inertia ixx="0.000362" ixy="-0.0" ixz="-0.0" iyy="0.00066" iyz="0.0" izz="0.000362"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.2921 -0.2286 -0.08255"/>
+    <geometry>
+      <mesh filename="package://six_wheeled_robot/meshes/wheel3_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.2921 -0.2286 -0.08255"/>
+    <geometry>
+      <mesh filename="package://six_wheeled_robot/meshes/wheel3_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="wheel4_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="3.019806626980426e-14 0.015875000000000056 -1.3877787807814457e-17"/>
+    <mass value="0.19439237862872402"/>
+    <inertia ixx="0.000362" ixy="-0.0" ixz="-0.0" iyy="0.00066" iyz="0.0" izz="0.000362"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.2921 0.2286 -0.08255"/>
+    <geometry>
+      <mesh filename="package://six_wheeled_robot/meshes/wheel4_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.2921 0.2286 -0.08255"/>
+    <geometry>
+      <mesh filename="package://six_wheeled_robot/meshes/wheel4_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="wheel5_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="3.019806626980426e-14 0.015874999999999945 9.71445146547012e-17"/>
+    <mass value="0.19439237862872408"/>
+    <inertia ixx="0.000362" ixy="0.0" ixz="0.0" iyy="0.00066" iyz="0.0" izz="0.000362"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.0 0.2286 -0.08255"/>
+    <geometry>
+      <mesh filename="package://six_wheeled_robot/meshes/wheel5_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.0 0.2286 -0.08255"/>
+    <geometry>
+      <mesh filename="package://six_wheeled_robot/meshes/wheel5_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="wheel6_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="3.008704396734174e-14 0.015874999999999778 6.938893903907228e-17"/>
+    <mass value="0.19439237862872388"/>
+    <inertia ixx="0.000362" ixy="0.0" ixz="-0.0" iyy="0.00066" iyz="-0.0" izz="0.000362"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.2921 0.2286 -0.08255"/>
+    <geometry>
+      <mesh filename="package://six_wheeled_robot/meshes/wheel6_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.2921 0.2286 -0.08255"/>
+    <geometry>
+      <mesh filename="package://six_wheeled_robot/meshes/wheel6_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="Rev4" type="continuous">
+  <origin rpy="0 0 0" xyz="0.2921 0.2286 0.08255"/>
+  <parent link="base_link"/>
+  <child link="wheel1_1"/>
+  <axis xyz="0.0 1.0 0.0"/>
+</joint>
+
+<joint name="Rev5" type="continuous">
+  <origin rpy="0 0 0" xyz="0.0 0.2286 0.08255"/>
+  <parent link="base_link"/>
+  <child link="wheel2_1"/>
+  <axis xyz="0.0 1.0 0.0"/>
+</joint>
+
+<joint name="Rev6" type="continuous">
+  <origin rpy="0 0 0" xyz="-0.2921 0.2286 0.08255"/>
+  <parent link="base_link"/>
+  <child link="wheel3_1"/>
+  <axis xyz="0.0 1.0 0.0"/>
+</joint>
+
+<joint name="Rev7" type="continuous">
+  <origin rpy="0 0 0" xyz="0.2921 -0.2286 0.08255"/>
+  <parent link="base_link"/>
+  <child link="wheel4_1"/>
+  <axis xyz="0.0 1.0 0.0"/>
+</joint>
+
+<joint name="Rev8" type="continuous">
+  <origin rpy="0 0 0" xyz="0.0 -0.2286 0.08255"/>
+  <parent link="base_link"/>
+  <child link="wheel5_1"/>
+  <axis xyz="0.0 1.0 0.0"/>
+</joint>
+
+<joint name="Rev9" type="continuous">
+  <origin rpy="0 0 0" xyz="-0.2921 -0.2286 0.08255"/>
+  <parent link="base_link"/>
+  <child link="wheel6_1"/>
+  <axis xyz="0.0 1.0 0.0"/>
+</joint>
+
+<joint name="camera_joint" type="fixed">
+    <axis xyz="0 1 0" />
+    <origin xyz="0.3 0 0.78" rpy="0 0 0"/>
+    <parent link="base_link"/>
+    <child link="camera_link"/>
+  </joint>
+
+<link name="camera_link">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-2.382091620719423e-05 4.2805859703891336e-07 -0.0047619771893046"/>
+    <mass value="0.6765868682880053"/>
+    <inertia ixx="0.031477" ixy="0.000557" ixz="1e-06" iyy="0.000186" iyz="-4e-06" izz="0.031608"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.0 0.002265 -0.61"/>
+    <geometry>
+      <box size="0.05 0.05 0.05"/>
+    </geometry>
+    <material name="red"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.057171 0.002265 -0.428419"/>
+    <geometry>
+      <!-- <box size="0.1 0.1 0.1"/> -->
+    </geometry>
+  </collision>
+</link>
+
+</robot>
